@@ -1,0 +1,21 @@
+			.outer{
+				min-height: 90px;
+				width: 100%;
+			}
+			.menu{
+				/* background-color: #e73b3b;	 */			
+				color: white;
+				min-height: 30px;
+			}
+			.submenu{
+				/* background-color: red; */
+				color: white;
+				font-size: 15px;
+				height: 25px;
+				display: none;
+				text-align: center;
+			}
+			.menuspan{
+				text-align: center;
+			}
+			
