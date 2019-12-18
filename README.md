@@ -1,11 +1,10 @@
 # menubar
 一个简易菜单栏jquery插件，可自定义背景颜色
 
-##
-
- 
- * 1.本插件为jquery插件
- * 2.param{
+/**
+ ## 1.本插件为jquery插件
+ ## 2.
+ param{
 	Option:[{
 	 	title:'语文',
 	 	submenulist:['1','2','3']
@@ -21,16 +20,16 @@
 	 submenucolor={backgroundColor:'red'} //子菜单背景色
  }
  * 
- * 3.使用示例
+ ## 3.使用示例
  * 
- * 引入：
+ ### 引入：
  * 		<script src="jquery.js"></script>
 		<script src="menubar.js"></script>
 		<link href="menubar.css" rel="stylesheet"/>
- * html:
+ ### html:
  * <div class="cover"></div>
  * 
- * js:
+ ### js:
  *$(document).ready(function(){
 			console.log('ready')
 			var menulist=[{
@@ -46,4 +45,10 @@
 			var menucolor={backgroundColor:'blue'};
 			var submenucolor={backgroundColor:'pink'};
 			$(document).MenuBar(menulist,'.cover', menucolor,submenucolor);})
+			
+ * 
+ * */
+ 
+
+
 			
