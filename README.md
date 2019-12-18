@@ -1,7 +1,9 @@
 # menubar
 一个简易菜单栏jquery插件，可自定义背景颜色
 
-/**
+##
+
+ 
  * 1.本插件为jquery插件
  * 2.param{
 	Option:[{
@@ -45,5 +47,3 @@
 			var submenucolor={backgroundColor:'pink'};
 			$(document).MenuBar(menulist,'.cover', menucolor,submenucolor);})
 			
- * 
- * */
