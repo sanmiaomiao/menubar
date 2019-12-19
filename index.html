@@ -31,7 +31,10 @@
 			},];
 			var menucolor={backgroundColor:'blue'};
 			var submenucolor={backgroundColor:'pink'};
-			$(document).MenuBar(menulist,'.cover', menucolor,submenucolor);})
+			var callback=function (a){
+				console.log(a)
+			}
+			$(document).MenuBar(menulist,'.cover', callback,menucolor,submenucolor);})
 			
 		
 	</script>

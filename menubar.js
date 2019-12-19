@@ -1,5 +1,5 @@
-/**
- * 1.本插件为jquery插件
+
+/* * 1.本插件为jquery插件
  * 2.@param{
 	Option:[{
 	 	title:'语文',
@@ -12,6 +12,7 @@
 	 	submenulist:['1','2','3']
 	 },],//菜单列表
 	 selector:'.cover'//菜单栏最外层选择器
+	 callback: 回调函数
 	 menucolor={backgroundColor:'#e73b3b'},//主菜单背景色
 	 submenucolor={backgroundColor:'red'} //子菜单背景色
  }
@@ -26,7 +27,7 @@
  * <div class="cover"></div>
  * 
  * js:
- *$(document).ready(function(){
+		$(document).ready(function(){
 			console.log('ready')
 			var menulist=[{
 				title:'手机',
@@ -40,14 +41,16 @@
 			},];
 			var menucolor={backgroundColor:'blue'};
 			var submenucolor={backgroundColor:'pink'};
-			$(document).MenuBar(menulist,'.cover', menucolor,submenucolor);})
-			
+			var callback=function (a){
+				console.log(a)
+			}
+			$(document).MenuBar(menulist,'.cover', callback,menucolor,submenucolor);})
  * 
  * */
 		
 		(function($){
 			//1.定义jquery的扩展方法MenuBar
-			$.fn.MenuBar=function(Option,selector,menucolor,submenucolor){
+			$.fn.MenuBar=function(Option,selector,callback,menucolor,submenucolor){
 				console.log('menubar')
 				//默认参数
 				var menulist=[{
@@ -67,7 +70,7 @@
 			 	_menucolor=$.extend(_menucolor,menucolor);
 				_submenucolor=$.extend(_submenucolor,submenucolor) 
 				 $.fn.MenuBar.methods['init'](menulist,selector,_menucolor,_submenucolor);
-				return $.fn.MenuBar.methods['ShowHide']();
+				return $.fn.MenuBar.methods['ShowHide'](callback);
 			}			
 			
 			//定义MenuBar的方法
@@ -102,7 +105,7 @@
 					})
 					
 				},				
-				ShowHide:function(){
+				ShowHide:function(callback){
 					console.log('sh')
 					//需要传入的参数$('#1') $('#1 .submenu') $('#2') $('#2 .submenu') $('#3') $('#3 .submenu') $('div') '.outer'
 					$('#s0').click(function(){
@@ -136,6 +139,9 @@
 						$(this)[0].style.opacity=0.7
 					},function(){
 						$(this)[0].style.opacity=1
+					})
+					$('.submenu').click(function(){
+						callback($(this)[0].innerHTML)
 					})
 					
 			}}
